@@ -1,0 +1,4 @@
+imports:
+    - { resource: "sylius/resource.yaml" }
+    - { resource: "sylius/grid.yaml" }
+    - { resource: "sylius/ui.yaml" }

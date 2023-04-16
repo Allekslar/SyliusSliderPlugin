@@ -1,0 +1,6 @@
+allekslar_slider_admin:
+    resource: "admin_routing.yaml"
+    prefix: /allekslar
+
+allekslar_slider_shop:
+    resource: "shop_routing.yaml"    

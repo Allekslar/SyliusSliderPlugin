@@ -1,0 +1,11 @@
+allekslar_slider:
+    ui:
+        sliders: Sliders
+        edit_slider: Edit slider
+        new_slider: New slider
+        manage_sliders: Manage Sliders
+        anchor: Anchor
+
+    form:
+        image:
+            url: URL

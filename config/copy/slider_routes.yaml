@@ -1,0 +1,3 @@
+allekslar_slider_admin:
+    resource: "@AllekslarSliderPlugin/config/routes/routes.yaml"
+    prefix: /admin

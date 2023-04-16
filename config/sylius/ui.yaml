@@ -1,0 +1,18 @@
+sylius_ui:
+    events:
+        sylius.admin.layout.javascripts:
+            blocks:
+                allekslar_slider_scripts:
+                    template: "@AllekslarSliderPlugin/admin/_scripts.html.twig"
+                    priority: -10
+        sylius.shop.homepage:
+            blocks:
+                allekslar_slider:
+                    template: "@AllekslarSliderPlugin/slider/homepage/_slider.html.twig"
+                    priority: 100    
+        sylius.shop.layout.javascripts:
+            blocks:
+                allekslar_slider_gsap_scripts:
+                    template: "@AllekslarSliderPlugin/shop/_gsap.html.twig"
+                    priority: 2
+   

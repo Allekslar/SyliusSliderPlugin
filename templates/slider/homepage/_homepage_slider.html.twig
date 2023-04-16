@@ -1,0 +1,30 @@
+
+{% if 'homeslider' == slider.code %}
+<div class="wrap-container">
+	<div class="slider" data-images-count={{slider.images.count}}>
+		{% for image in slider.images %}
+			<div class="box{{loop.index}} box" style="background-image: url({{ image.path|imagine_filter(filter|default('sylius_shop_product_original')) }});">
+				<div class="bg"></div>
+				<div class="details">
+					<h1>{{image.title}}</h1>
+					<p>
+						{{image.description}}
+					</p>
+					<a class="link" href={{image.type}}>
+						<button>{{image.anchor}}</button>
+					</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" class="prev" width="56.898" height="91" viewbox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#fff"/></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" class="next" width="56.898" height="91" viewbox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#fff"/></svg>
+	<div class="wraptrail">
+		<div class="trail">
+			{% for image in slider.images %}
+				<div class="box{{loop.index}} {% if loop.index0 == 0 %}active{% endif %} " data-value={{loop.index}}>{{loop.index}}</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}

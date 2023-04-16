@@ -1,0 +1,15 @@
+allekslar_slider_admin_slider1:
+    resource: |
+        alias: allekslar_slider.slider
+        section: admin
+        templates: "@SyliusAdmin/Crud"
+        redirect: index
+        grid: allekslar_slider_admin_slider
+        vars:
+            all:
+                subheader: allekslar_slider.ui.manage_sliders
+                templates:
+                    form: '@AllekslarSliderPlugin/admin/slider/_form.html.twig'
+            index:
+                icon: 'file image outline'
+    type: sylius.resource

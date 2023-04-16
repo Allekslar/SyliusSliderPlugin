@@ -1,0 +1,32 @@
+sylius_grid:
+    grids:
+        allekslar_slider_admin_slider:
+            driver:
+                options:
+                    class: Allekslar\SliderPlugin\Entity\Slider
+            sorting:
+                code: asc
+            fields:
+                code:
+                    type: string
+                    label: sylius.ui.code
+                    sortable: ~
+                name:
+                    type: string
+                    label: sylius.ui.name
+                    sortable: ~
+
+    
+            filters:
+                code:
+                    type: string
+                    label: sylius.ui.code
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

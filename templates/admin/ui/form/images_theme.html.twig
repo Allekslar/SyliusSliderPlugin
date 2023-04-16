@@ -1,0 +1,8 @@
+{% extends '@SyliusUi/Form/imagesTheme.html.twig' %}
+
+{% block allekslar_slider_image_widget %}
+	{{ form_row(form.title) }}
+	{{ form_row(form.description) }}
+    {{ form_row(form.anchor) }}
+	{{ block('sylius_taxon_image_widget') }}
+{% endblock %}

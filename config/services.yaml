@@ -1,0 +1,42 @@
+imports:
+    # - { resource: "config.yaml" }
+
+
+services:
+    allekslar_slider.listener.admin.menu_builder:
+        class: Allekslar\SliderPlugin\Menu\AdminMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
+
+    allekslar_slider.form.type.slider:
+        class: Allekslar\SliderPlugin\Form\Type\SliderType
+        arguments: [Allekslar\SliderPlugin\Entity\Slider]
+        tags:
+            - { name: form.type }
+
+    allekslar_slider.form.type.slider_image:
+        class: Allekslar\SliderPlugin\Form\Type\SliderImageType
+        arguments: [Allekslar\SliderPlugin\Entity\SliderImage]
+        tags:
+            - { name: form.type }
+
+    allekslar_slider.listener.images_upload:
+        class: Sylius\Bundle\CoreBundle\EventListener\ImagesUploadListener
+        autowire: true
+        tags:
+            - { name: kernel.event_listener, event: allekslar_slider.slider.pre_create, method: uploadImages }
+            - { name: kernel.event_listener, event: allekslar_slider.slider.pre_update, method: uploadImages }
+            
+    app.block_event_listener.admin.layout.javascripts:
+            class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+            arguments:
+                - '@@AllekslarSliderPlugin/shop/_scripts.html.twig'  
+            tags:
+                - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.layout.javascripts, method: onBlockEvent }
+
+    app.block_event_listener.shop.layout.stylesheets:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - '@@AllekslarSliderPlugin/shop/_css.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.layout.stylesheets, method: onBlockEvent }

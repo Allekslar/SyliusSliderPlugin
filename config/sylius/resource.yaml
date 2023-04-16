@@ -1,0 +1,13 @@
+sylius_resource:
+    resources:
+        allekslar_slider.slider:
+            classes:
+                controller: Allekslar\SliderPlugin\Controller\SliderController
+                model: Allekslar\SliderPlugin\Entity\Slider
+                form: Allekslar\SliderPlugin\Form\Type\SliderType
+                repository: Allekslar\SliderPlugin\Repository\SliderRepository
+
+        allekslar_slider.slider_image:
+            classes:
+                model: Allekslar\SliderPlugin\Entity\SliderImage
+                form: Allekslar\SliderPlugin\Form\Type\SliderImageType
