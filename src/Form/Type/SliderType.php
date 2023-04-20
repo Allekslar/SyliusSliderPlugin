@@ -6,6 +6,7 @@ namespace Allekslar\SliderPlugin\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\EventSubscriber\AddCodeFormSubscriber;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,6 +18,10 @@ final class SliderType extends AbstractResourceType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'sylius.ui.name',
+            ])
+            ->add('enabled', CheckboxType::class, [
+                'label' => 'sylius.ui.enabled',
+                'required' => false,
             ])
             ->add('images', CollectionType::class, [
                 'entry_type' => SliderImageType::class,

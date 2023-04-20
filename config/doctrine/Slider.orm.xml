@@ -8,6 +8,7 @@
             <generator strategy="IDENTITY"/>
         </id>
         <field name="code" length="150" unique="true" />
+        <field name="enabled" type="boolean" />
         <field name="name" length="150" />
         <field name="createdAt" column="created_at" type="datetime">
             <gedmo:timestampable on="create"/>

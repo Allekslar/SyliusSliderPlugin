@@ -1,5 +1,4 @@
-
-{% if 'homeslider' == slider.code %}
+{% if 'homeslider' == slider.code and slider.enabled %}
 <div class="wrap-container">
 	<div class="slider" data-images-count={{slider.images.count}}>
 		{% for image in slider.images %}

@@ -1,8 +1,11 @@
 <div class="ui segment">
-    {{ form_errors(form) }}
-    <div class="two fields">
-        {{ form_row(form.code) }}
-        {{ form_row(form.name) }}
-</div>
+	{{ form_errors(form) }}
+	<div class="ui segment">
+		{{ form_row(form.enabled) }}
+	</div>
+	<div class="two fields">
+		{{ form_row(form.code) }}
+		{{ form_row(form.name) }}
+	</div>
 
-{{ include('@AllekslarSliderPlugin/admin/slider/_media.html.twig') }}
+	{{ include('@AllekslarSliderPlugin/admin/slider/_media.html.twig') }}

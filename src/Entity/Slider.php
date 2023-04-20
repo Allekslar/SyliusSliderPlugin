@@ -7,11 +7,12 @@ namespace Allekslar\SliderPlugin\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Core\Model\ImageInterface;
+use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 
 class Slider implements SliderInterface
 {
-    use TimestampableTrait;
+    use TimestampableTrait, ToggleableTrait;
 
     /** @var int|null */
     private $id;

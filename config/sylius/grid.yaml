@@ -11,6 +11,12 @@ sylius_grid:
                     type: string
                     label: sylius.ui.code
                     sortable: ~
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/Grid/Field/enabled.html.twig"                    
                 name:
                     type: string
                     label: sylius.ui.name
