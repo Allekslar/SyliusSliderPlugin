@@ -1,4 +1,5 @@
 const slider = document.querySelector('.slider');
+if (slider !== null) {
 const trail = document.querySelector('.trail').querySelectorAll('div');
 const imageCount = slider.getAttribute('data-images-count');
 
@@ -103,4 +104,5 @@ const touchSlide = (() => {
     [start, move, change, sliderWidth] = [0, 0, 0, 0];
   };
   slider.addEventListener('touchend', mobile);
-})();
+})()
+};
